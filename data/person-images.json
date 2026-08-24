@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-24T20:30:10.344Z",
-  "rosterSize": 969,
-  "covered": 958,
+  "generatedAt": "2026-08-24T23:12:29.844Z",
+  "rosterSize": 971,
+  "covered": 960,
   "images": {
     "14th Dalai Lama": {
       "src": "./assets/people/14th-dalai-lama.jpg",
@@ -4753,6 +4753,16 @@
       "wikidataId": "Q9161",
       "wikipediaTitle": "Josip Broz Tito"
     },
+    "Juan Carlos I": {
+      "src": "./assets/people/juan-carlos-i.jpg",
+      "alt": "Portrait of Juan Carlos I",
+      "source": "https://commons.wikimedia.org/wiki/File:Rey_Juan_Carlos_2013.jpg",
+      "creator": "Irekia",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "wikidataId": "Q19943",
+      "wikipediaTitle": "Juan Carlos I"
+    },
     "Juan Perón": {
       "src": "./assets/people/juan-peron.jpg",
       "alt": "Portrait of Juan Perón",
@@ -7292,6 +7302,16 @@
       "licenseUrl": "",
       "wikidataId": "Q182897",
       "wikipediaTitle": "Prince Henry the Navigator"
+    },
+    "Princess Diana": {
+      "src": "./assets/people/princess-diana.jpg",
+      "alt": "Portrait of Princess Diana",
+      "source": "https://commons.wikimedia.org/wiki/File:Diana,_Princess_of_Wales_1997_(2)_(cropped).jpg",
+      "creator": "John Mathew Smith & www.celebrity-photos.com from Laurel Maryland, USA ( Archived link)",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "wikidataId": "Q9685",
+      "wikipediaTitle": "Diana, Princess of Wales"
     },
     "Priyanka Chopra": {
       "src": "./assets/people/priyanka-chopra.jpg",
