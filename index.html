@@ -1428,6 +1428,7 @@
   const BIG_EGO_STORAGE='the-cabinet-known-big-egos-v1';let knownBigEgoNames=new Set();try{const saved=JSON.parse(localStorage.getItem(BIG_EGO_STORAGE)||'[]');if(Array.isArray(saved))knownBigEgoNames=new Set(saved.filter(name=>BIG_EGO_NAMES.has(name)))}catch(error){}
   const knowsBigEgo=candidate=>Boolean(candidate?.bigEgo&&knownBigEgoNames.has(candidate.name));
   function learnBigEgo(candidate){if(!candidate?.bigEgo||knownBigEgoNames.has(candidate.name))return;knownBigEgoNames.add(candidate.name);try{localStorage.setItem(BIG_EGO_STORAGE,JSON.stringify([...knownBigEgoNames]))}catch(error){}}
+  if(knownBigEgoNames.size)unlockAchievement('that-doesnt-work-for-me-brother');
   const imageFor=candidate=>globalThis.PERSON_IMAGES?.[candidate.name]||null;
   const portraitMarkup=candidate=>{const image=imageFor(candidate);return `<div class="portrait"><span>${initials(candidate.name)}</span>${image?`<img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt||`Portrait of ${candidate.name}`)}" loading="lazy" decoding="async" onerror="this.remove()">`:''}</div>`};
   const portraitCreditMarkup=candidate=>{const image=imageFor(candidate);if(!image)return '';const creator=image.creator||'Wikimedia Commons contributor',license=image.license||'Source';return `<p class="portrait-credit">Portrait: <a href="${escapeHtml(image.source)}" target="_blank" rel="noopener noreferrer">${escapeHtml(creator)}</a> · <a href="${escapeHtml(image.licenseUrl||image.source)}" target="_blank" rel="noopener noreferrer">${escapeHtml(license)}</a></p>`};
