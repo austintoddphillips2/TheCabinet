@@ -338,6 +338,12 @@
 <script src="./data/person-images.js"></script>
 <script>
 (() => {
+  Object.assign(globalThis.PERSON_IMAGES,{
+    'Chris Hansen':{src:'./assets/people/chris-hansen.jpg',alt:'Portrait of Chris Hansen',source:'https://commons.wikimedia.org/wiki/File:Chris_Hansen.jpg',creator:'Noa Grayevsky',license:'CC BY-SA 4.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/4.0',wikidataId:'Q562448',wikipediaTitle:'Chris Hansen'},
+    'Stephen A. Smith':{src:'./assets/people/stephen-a-smith.jpg',alt:'Portrait of Stephen A. Smith',source:'https://commons.wikimedia.org/wiki/File:Stephen_A._Smith_February_2020.jpg',creator:'Senator Chris Coons',license:'Public domain',licenseUrl:'',wikidataId:'Q7608548',wikipediaTitle:'Stephen A. Smith'},
+    'Martin McGuinness':{src:'./assets/people/martin-mcguinness.jpg',alt:'Portrait of Martin McGuinness',source:'https://commons.wikimedia.org/wiki/File:Martin_McGuinness.jpg',creator:'Chris Greenberg / The White House',license:'Public domain',licenseUrl:'',wikidataId:'Q57689',wikipediaTitle:'Martin McGuinness'},
+    'Tom Barry':{src:'./assets/people/tom-barry.jpg',alt:'Portrait of Tom Barry',source:'https://commons.wikimedia.org/wiki/File:Tom_Barry_(IRA_guerrilla_leader,_born_1897).jpg',creator:'Unknown',license:'Public domain',licenseUrl:'',wikidataId:'Q3757020',wikipediaTitle:'Tom Barry (Irish republican)'}
+  });
   const ROLES=['President','Vice President','Commander','Press Secretary','Treasurer'];
   const ADVISER_ROLES=['Chief of Staff','Secretary of State','Intelligence Director','Science & Industry Secretary'];
   const ALL_ROLES=[...ROLES,...ADVISER_ROLES];
@@ -365,6 +371,30 @@
   };
   const IMPORTANCE_ADJUST={Icon:3,Major:1,Supporting:-2,Specialist:-5};
   const ROLE_SCORE_OVERRIDES={
+    'Chris Hansen':{President:42,'Vice President':76,Commander:34,'Press Secretary':89,Treasurer:48},
+    'Stephen A. Smith':{President:48,'Vice President':88,Commander:40,'Press Secretary':96,Treasurer:54},
+    'Moses':{President:84,'Vice President':88,Commander:78,'Press Secretary':90,Treasurer:70},
+    'Abraham':{President:58,'Vice President':88,Commander:38,'Press Secretary':84,Treasurer:58},
+    'King David':{President:88,'Vice President':86,Commander:92,'Press Secretary':86,Treasurer:72},
+    'King Solomon':{President:90,'Vice President':86,Commander:55,'Press Secretary':84,Treasurer:92},
+    'Sargon of Akkad':{President:91,'Vice President':80,Commander:94,'Press Secretary':76,Treasurer:78},
+    'Nebuchadnezzar II':{President:89,'Vice President':78,Commander:91,'Press Secretary':82,Treasurer:82},
+    'Cyrus the Great':{President:94,'Vice President':88,Commander:93,'Press Secretary':86,Treasurer:86},
+    'Darius the Great':{President:92,'Vice President':84,Commander:84,'Press Secretary':82,Treasurer:94},
+    'Xerxes I':{President:81,'Vice President':80,Commander:84,'Press Secretary':78,Treasurer:78},
+    'Hammurabi':{President:90,'Vice President':82,Commander:72,'Press Secretary':88,Treasurer:88},
+    'Ramesses II':{President:92,'Vice President':88,Commander:88,'Press Secretary':94,Treasurer:84},
+    'Thutmose III':{President:90,'Vice President':80,Commander:96,'Press Secretary':76,Treasurer:84},
+    'Saladin':{President:86,'Vice President':84,Commander:94,'Press Secretary':82,Treasurer:72},
+    'Suleiman the Magnificent':{President:94,'Vice President':90,Commander:92,'Press Secretary':88,Treasurer:90},
+    'Mehmed the Conqueror':{President:93,'Vice President':84,Commander:95,'Press Secretary':82,Treasurer:86},
+    'Pope Urban II':{President:74,'Vice President':90,Commander:40,'Press Secretary':94,Treasurer:72},
+    'Pope John Paul II':{President:74,'Vice President':96,Commander:38,'Press Secretary':97,Treasurer:74},
+    'Michael Collins':{President:85,'Vice President':84,Commander:92,'Press Secretary':82,Treasurer:80},
+    'Éamon de Valera':{President:88,'Vice President':83,Commander:65,'Press Secretary':84,Treasurer:70},
+    'Tom Barry':{President:56,'Vice President':70,Commander:91,'Press Secretary':67,Treasurer:48},
+    'Bobby Sands':{President:51,'Vice President':86,Commander:62,'Press Secretary':92,Treasurer:44},
+    'Martin McGuinness':{President:76,'Vice President':88,Commander:84,'Press Secretary':80,Treasurer:62},
     'Javier Milei':{President:83,'Vice President':78,Commander:40,'Press Secretary':88,Treasurer:90},
     'Robert McNamara':{President:69,'Vice President':72,Commander:74,'Press Secretary':65,Treasurer:88},
     'John F. Kennedy':{President:86,'Vice President':93,Commander:60,'Press Secretary':95,Treasurer:60},
@@ -405,7 +435,7 @@
     'Religious Leaders':['Moral Authority','Vice President',8,'Stabilizes the Coalition','Doctrinal Divide'],'Content Creators':['Viral Reach','Press Secretary',9,'Mobilizes Attention Instantly','Algorithm Chaser'],
     'Criminals & Outlaws':['Shadow Network','Commander',6,'Ignores Normal Constraints','Trust Deficit'],Wildcards:['Unpredictable Asset','President',5,'Changes the Rules','Volatile Instinct']
   };
-  const GEOGRAPHIES=['United States','United Kingdom','France','Germany','Italy','Iberia','Canada','Australia','Brazil','Mexico','South Asia','China','Japan','The Koreas','Russia','South Africa','Ireland','Greece','Nordic Countries','Benelux','Central Europe','Balkans','Eastern Europe','Southeast Asia','Middle East & North Africa','West Africa','East Africa','Southern Africa','Caribbean','Central America','Andean Region','Southern Cone','Pacific Islands'];
+  const GEOGRAPHIES=['United States','United Kingdom & Ireland','France','Germany','Italy','Iberia','Canada','Australia','Brazil','Mexico','South Asia','China','Japan','The Koreas','Russia','South Africa','Greece','Nordic Countries','Benelux','Central Europe','Balkans','Eastern Europe','Southeast Asia','Middle East & North Africa','West Africa','East Africa','Southern Africa','Caribbean','Central America','Andean Region','Southern Cone','Pacific Islands'];
   const WORLD_COUNTRY_GROUPS={
     Africa:['Algeria','Angola','Benin','Botswana','Burkina Faso','Burundi','Cabo Verde','Cameroon','Central African Republic','Chad','Comoros','Democratic Republic of the Congo','Republic of the Congo','Côte d’Ivoire','Djibouti','Egypt','Equatorial Guinea','Eritrea','Eswatini','Ethiopia','Gabon','The Gambia','Ghana','Guinea','Guinea-Bissau','Kenya','Lesotho','Liberia','Libya','Madagascar','Malawi','Mali','Mauritania','Mauritius','Morocco','Mozambique','Namibia','Niger','Nigeria','Rwanda','São Tomé and Príncipe','Senegal','Seychelles','Sierra Leone','Somalia','South Africa','South Sudan','Sudan','Tanzania','Togo','Tunisia','Uganda','Zambia','Zimbabwe'],
     Asia:['Afghanistan','Armenia','Azerbaijan','Bahrain','Bangladesh','Bhutan','Brunei','Cambodia','China','Cyprus','Georgia','India','Indonesia','Iran','Iraq','Israel','Japan','Jordan','Kazakhstan','Kuwait','Kyrgyzstan','Laos','Lebanon','Malaysia','Maldives','Mongolia','Myanmar','Nepal','North Korea','Oman','Pakistan','Philippines','Qatar','Saudi Arabia','Singapore','South Korea','Sri Lanka','Syria','Tajikistan','Thailand','Timor-Leste','Türkiye','Turkmenistan','United Arab Emirates','Uzbekistan','Vietnam','Yemen'],
@@ -468,7 +498,7 @@
   const CATALOG_ERAS={
     'Age of Revolutions':['Aaron Burr','Blackbeard','Anne Bonny','Mary Read','Captain William Kidd'],
     'Industrial Age':['James Monroe','John Quincy Adams','Andrew Jackson','Martin Van Buren','William Henry Harrison','John Tyler','James K. Polk','Zachary Taylor','Millard Fillmore','Franklin Pierce','James Buchanan','Andrew Johnson','Ulysses S. Grant','Rutherford B. Hayes','James A. Garfield','Chester A. Arthur','Grover Cleveland','Benjamin Harrison','William McKinley','William Howard Taft','John C. Calhoun','Jack the Ripper','Ned Kelly'],
-    '20th Century':['Woodrow Wilson','Warren G. Harding','Calvin Coolidge','Herbert Hoover','Harry S. Truman','Lyndon B. Johnson','Richard Nixon','Gerald Ford','Jimmy Carter','George H. W. Bush','Bill Clinton','Juan Carlos I','Princess Diana','Henry A. Wallace','Hubert Humphrey','Spiro Agnew','Nelson Rockefeller','Walter Mondale','Dan Quayle','Al Gore','Ted Bundy','Charles Manson','Jeffrey Dahmer','John Wayne Gacy','Ed Gein','Richard Ramirez','Aileen Wuornos','David Berkowitz','Zodiac Killer','Albert DeSalvo','Ted Kaczynski','Timothy McVeigh','D. B. Cooper','Clyde Barrow','Whitey Bulger','Lucky Luciano','Bugsy Siegel','Meyer Lansky','Frank Costello','Carlo Gambino','John Gotti','Sammy Gravano','Frank Lucas','Ronnie Kray','Reggie Kray','Salvatore Riina','Jacques Mesrine','Charles Sobhraj','Carlos the Jackal','Dawood Ibrahim','Miguel Ángel Félix Gallardo','Frank Abagnale'],
+    '20th Century':['Woodrow Wilson','Warren G. Harding','Calvin Coolidge','Herbert Hoover','Harry S. Truman','Lyndon B. Johnson','Richard Nixon','Gerald Ford','Jimmy Carter','George H. W. Bush','Bill Clinton','Juan Carlos I','Princess Diana','Henry A. Wallace','Hubert Humphrey','Spiro Agnew','Nelson Rockefeller','Walter Mondale','Dan Quayle','Al Gore','Michael Collins','Éamon de Valera','Tom Barry','Bobby Sands','Martin McGuinness','Ted Bundy','Charles Manson','Jeffrey Dahmer','John Wayne Gacy','Ed Gein','Richard Ramirez','Aileen Wuornos','David Berkowitz','Zodiac Killer','Albert DeSalvo','Ted Kaczynski','Timothy McVeigh','D. B. Cooper','Clyde Barrow','Whitey Bulger','Lucky Luciano','Bugsy Siegel','Meyer Lansky','Frank Costello','Carlo Gambino','John Gotti','Sammy Gravano','Frank Lucas','Ronnie Kray','Reggie Kray','Salvatore Riina','Jacques Mesrine','Charles Sobhraj','Carlos the Jackal','Dawood Ibrahim','Miguel Ángel Félix Gallardo','Frank Abagnale'],
     '21st Century':['George W. Bush','Joe Biden','Dick Cheney','Mike Pence','Kamala Harris','Joaquín “El Chapo” Guzmán','Bernie Madoff','Elizabeth Holmes','Sam Bankman-Fried','Robert Pickton']
   };
   Object.values(CATALOG_ERAS).flat().forEach(name=>HISTORICAL_NAMES.add(name));
@@ -519,9 +549,12 @@
   ['Chandragupta Maurya','Christopher Columbus','Ferdinand II of Aragon','Isabella I of Castile','Vasco da Gama','Ferdinand Magellan','Erasmus','Gerardus Mercator','Justinian I','Belisarius','Giuseppe Garibaldi','Guglielmo Marconi','Benito Juárez','Porfirio Díaz','Dmitri Mendeleev','Ivan Pavlov','J. Robert Oppenheimer','John Maynard Keynes'].forEach(name=>ICON_NAMES.add(name));
   ['Andrew Jackson','Ulysses S. Grant','Woodrow Wilson','Harry S. Truman','Lyndon B. Johnson','Richard Nixon','Bill Clinton','Jack the Ripper','Ted Bundy','Charles Manson','Jeffrey Dahmer','Pablo Escobar','Joaquín “El Chapo” Guzmán'].forEach(name=>ICON_NAMES.add(name));
   ['Juan Carlos I','Princess Diana'].forEach(name=>ICON_NAMES.add(name));
+  ICON_NAMES.add('Stephen A. Smith');
+  ['Michael Collins','Éamon de Valera','Bobby Sands','Martin McGuinness'].forEach(name=>ICON_NAMES.add(name));
   const PRESTIGE_FIELDS=new Set(['Politicians','Military Leaders','Scientists & Academics','Business Leaders','Religious Leaders','Activists','Writers & Journalists']);
   const CONTESTED_NAMES=new Set(['Adolf Hitler','Joseph Goebbels','Benito Mussolini','Francisco Franco','Mao Zedong','Joseph Stalin','Vladimir Lenin','Nicolae Ceaușescu','Pol Pot','Saddam Hussein','Robert Mugabe','Augusto Pinochet','Pablo Escobar','Griselda Blanco','Abimael Guzmán','Al Capone','Bonnie Parker','John Dillinger','Porfirio Díaz','Chiang Kai-shek','Park Chung Hee','Julius Caesar','Napoleon Bonaparte']);
   ['Genghis Khan','Timur','Attila the Hun','Nero','Hernán Cortés','Francisco Pizarro','Maximilien Robespierre','Ivan the Terrible','Kaiser Wilhelm II','Fidel Castro','Idi Amin','Muammar Gaddafi','Osama bin Laden','Kim Il Sung','Kim Jong Il','Kim Jong Un','Ferdinand Marcos','Slobodan Milošević','Vladimir Putin','Ayatollah Khomeini'].forEach(name=>CONTESTED_NAMES.add(name));
+  ['Tom Barry','Bobby Sands','Martin McGuinness'].forEach(name=>CONTESTED_NAMES.add(name));
   ['Caligula','Sulla','Antonio López de Santa Anna','Jesse James','Billy the Kid','John Wilkes Booth'].forEach(name=>CONTESTED_NAMES.add(name));
   CONTESTED_NAMES.add('Wernher von Braun');
   CONTESTED_NAMES.add('Robert E. Lee');
@@ -536,7 +569,7 @@
     Fascism:nameSet(['Adolf Hitler','Joseph Goebbels','Benito Mussolini','Francisco Franco','António de Oliveira Salazar','Nick Fuentes','José Antonio Primo de Rivera']),
     Dictatorship:nameSet(['Adolf Hitler','Joseph Goebbels','Benito Mussolini','Francisco Franco','António de Oliveira Salazar','Joseph Stalin','Mao Zedong','Pol Pot','Idi Amin','Saddam Hussein','Muammar Gaddafi','Kim Il Sung','Kim Jong Il','Kim Jong Un','Ferdinand Marcos','Park Chung Hee','Nicolae Ceaușescu','Slobodan Milošević','Augusto Pinochet','Porfirio Díaz','Vladimir Putin','Xi Jinping','Fidel Castro','Robert Mugabe','Nayib Bukele','Julius Caesar','Napoleon Bonaparte','Genghis Khan','Timur','Ivan the Terrible']),
     Monarchy:nameSet(['Alexander the Great','Genghis Khan','Kublai Khan','Charlemagne','William the Conqueror','Queen Victoria','Queen Elizabeth II','Juan Carlos I','Emperor Meiji','Catherine the Great','Peter the Great','Frederick the Great','Louis XIV','Louis XVI','Marie Antoinette','Henry VIII','Philip II of Spain','Charles V, Holy Roman Emperor','Suleiman the Magnificent','Mehmed the Conqueror','Akbar the Great','Isabella I of Castile','Ferdinand II of Aragon','Cleopatra','Ramesses II','Tutankhamun','Cyrus the Great','Darius the Great','Xerxes I','Qin Shi Huang','Ashoka','Marcus Aurelius','Augustus','Constantine the Great']),
-    Theocracy:nameSet(['Ayatollah Khomeini','Pope Urban II','Pope John Paul II','Moses','King David','Muhammad Ali Jinnah','Thomas Aquinas','John Calvin']),
+    Theocracy:nameSet(['Ayatollah Khomeini','Pope Urban II','Pope John Paul II','Moses','King David','King Solomon','Muhammad Ali Jinnah','Thomas Aquinas','John Calvin']),
     Socialism:nameSet(['Karl Marx','Friedrich Engels','Bernie Sanders','Alexandria Ocasio-Cortez','Nelson Mandela','Thomas Sankara','Salvador Allende','Hugo Chávez','Olof Palme','George Orwell','Simone de Beauvoir','Jean-Paul Sartre']),
     Communism:nameSet(['Karl Marx','Friedrich Engels','Vladimir Lenin','Leon Trotsky','Joseph Stalin','Mao Zedong','Deng Xiaoping','Xi Jinping','Fidel Castro','Che Guevara','Ho Chi Minh','Pol Pot','Kim Il Sung','Kim Jong Il','Kim Jong Un','Mikhail Gorbachev','Nicolae Ceaușescu'])
   };
@@ -602,6 +635,16 @@
   EVIDENCE_GROUPS.national_executive.add('Benjamin Netanyahu');
   EVIDENCE_GROUPS.wartime_leader.add('Benjamin Netanyahu');
   EVIDENCE_GROUPS.military_experience.add('Benjamin Netanyahu');
+  ['King David','Sargon of Akkad','Nebuchadnezzar II','Cyrus the Great','Darius the Great','Xerxes I','Hammurabi','Ramesses II','Thutmose III','Saladin','Suleiman the Magnificent','Mehmed the Conqueror'].forEach(name=>EVIDENCE_GROUPS.national_executive.add(name));
+  ['King David','Sargon of Akkad','Nebuchadnezzar II','Cyrus the Great','Ramesses II','Thutmose III','Suleiman the Magnificent','Mehmed the Conqueror'].forEach(name=>EVIDENCE_GROUPS.major_field_command.add(name));
+  ['Moses','King Solomon','Cyrus the Great','Darius the Great','Hammurabi','Suleiman the Magnificent','Mehmed the Conqueror','Pope Urban II','Pope John Paul II'].forEach(name=>EVIDENCE_GROUPS.institutional_builder.add(name));
+  ['King Solomon','Darius the Great','Suleiman the Magnificent'].forEach(name=>EVIDENCE_GROUPS.macroeconomic_record.add(name));
+  ['Moses','Ramesses II','Pope Urban II','Pope John Paul II'].forEach(name=>EVIDENCE_GROUPS.message_discipline.add(name));
+  EVIDENCE_GROUPS.state_founder.add('Michael Collins');
+  EVIDENCE_GROUPS.national_executive.add('Éamon de Valera');
+  ['Michael Collins','Tom Barry','Martin McGuinness'].forEach(name=>EVIDENCE_GROUPS.major_field_command.add(name));
+  ['Michael Collins','Bobby Sands','Martin McGuinness'].forEach(name=>EVIDENCE_GROUPS.coalition_symbol.add(name));
+  ['Bobby Sands','Martin McGuinness'].forEach(name=>EVIDENCE_GROUPS.message_discipline.add(name));
   const ROLE_EVIDENCE_WEIGHTS={
     President:{political_experience:7,national_executive:13,state_founder:8,wartime_leader:4,large_organization_builder:3,coalition_symbol:3,institutional_builder:3,national_development_gain:6,rapid_state_mobilization:5,domain_expertise:2,economic_systems_thinker:8,human_development_science:14,institutional_failure:-7,catastrophic_national_outcome:-12},
     'Vice President':{mass_communicator:4,coalition_symbol:5,vice_presidential_experience:8,political_experience:3,national_executive:2,large_organization_builder:2,rapid_state_mobilization:2,domain_expertise:6,technical_innovator:8,economic_systems_thinker:4,public_intellectual:4,human_development_science:5,strategic_science:5,criminal_media_manipulation:3,institutional_failure:-5},
@@ -702,6 +745,7 @@
     P('Kofi Annan','Ghana','West Africa',['Political Leaders','Politicians'],5),P('Ellen Johnson Sirleaf','Liberia','West Africa',['Political Leaders','Politicians'],5),P('Kwame Nkrumah','Ghana','West Africa',['Political Leaders','Politicians'],5),
 
     P('Dave Chappelle','United States','United States',['Comedians','Actors'],5),P('Jerry Seinfeld','United States','United States',['Comedians','Actors'],5),P('Eddie Murphy','United States','United States',['Comedians','Actors'],5),
+    P('Chris Hansen','United States','United States',['Television Hosts','Journalists','Content Creators'],5),P('Stephen A. Smith','United States','United States',['Television Hosts','Journalists','Sports Figures'],5),
     P('Neil deGrasse Tyson','United States','United States',['Scientists','Television Hosts'],4),P('Carl Sagan','United States','United States',['Scientists','Authors','Television Hosts'],5),P('Katherine Johnson','United States','United States',['Scientists','Academics'],5),P('J. Robert Oppenheimer','United States','United States',['Scientists & Academics'],5),
     P('Stephen King','United States','United States',['Authors'],5),P('Maya Angelou','United States','United States',['Poets','Activists'],5),P('Bob Woodward','United States','United States',['Journalists','Authors'],4),
     P('Dwight D. Eisenhower','United States','United States',['Military Leaders','Politicians'],5),P('George S. Patton','United States','United States',['Military Leaders'],5),P('Colin Powell','United States','United States',['Military Leaders','Politicians'],5),P('Robert E. Lee','United States','United States',['Military Leaders'],5),P('William Tecumseh Sherman','United States','United States',['Military Leaders'],5),
@@ -785,6 +829,7 @@
 
     P('James Joyce','Ireland','Ireland',['Writers & Journalists'],5),P('Oscar Wilde','Ireland','Ireland',['Writers & Journalists','Comedians'],5),P('W. B. Yeats','Ireland','Ireland',['Writers & Journalists'],5),
     P('Michael Collins','Ireland','Ireland',['Politicians','Military Leaders'],5),P('Éamon de Valera','Ireland','Ireland',['Politicians'],5),
+    P('Tom Barry','Ireland','Ireland',['Military Leaders','Activists'],4),P('Bobby Sands','Northern Ireland','Ireland',['Activists','Politicians','Writers & Journalists'],5),P('Martin McGuinness','Northern Ireland','Ireland',['Politicians','Military Leaders','Activists'],5),
 
     P('Socrates','Greece','Greece',['Scientists & Academics','Writers & Journalists'],5),P('Plato','Greece','Greece',['Scientists & Academics','Writers & Journalists'],5),P('Aristotle','Greece','Greece',['Scientists & Academics','Writers & Journalists'],5),
     P('Alexander the Great','Greece','Greece',['Military Leaders','Politicians'],5),P('Leonidas I','Greece','Greece',['Military Leaders','Politicians'],5),P('Themistocles','Greece','Greece',['Military Leaders','Politicians'],5),
@@ -1007,13 +1052,14 @@
   const SECRET_CHARACTERS=[{
     name:'Hank Williams Jr.',country:'United States',geographies:['United States'],tags:['Musicians','Criminals & Outlaws','Wildcards'],governmentTags:['Any'],primaryGovernment:'Any',evidence:['mass_communicator','large_organization_builder'],tier:5,importance:'Icon',era:'20th Century',generation:'Modern',canonical:true,timeEra:'20th Century',timeEligible:false,contested:false,controversial:false,bigEgo:false,profile:'Secret legend',field:'Musicians',origin:'United States',command:100,influence:100,treasury:100,loyalty:100,star:100,roleRatings:{President:100,'Vice President':100,Commander:100,'Press Secretary':100,Treasurer:100},trait:'Family Tradition',favored:'Vice President',bonus:0,traitText:'A secret cabinet legend with no weak appointment.',liability:'None',liabilityText:'',penalty:0,price:0,secret:true
   }];
-  for(const candidate of PEOPLE)if(candidate.geographies.some(region=>region==='Spain'||region==='Portugal'))candidate.geographies=[...new Set(candidate.geographies.map(region=>region==='Spain'||region==='Portugal'?'Iberia':region))];
+  const mergedDraftRegion=region=>region==='Spain'||region==='Portugal'?'Iberia':region==='United Kingdom'||region==='Ireland'?'United Kingdom & Ireland':region;
+  for(const candidate of PEOPLE)candidate.geographies=[...new Set(candidate.geographies.map(mergedDraftRegion))];
   const ALL_KNOWN_PEOPLE=[...PEOPLE,...SECRET_CHARACTERS];
   const PROFESSIONS=[...new Set(PEOPLE.flatMap(p=>p.tags))];
   const GEOGRAPHY_FILTER_GROUPS=[
     ['North America & Caribbean',['United States','Canada','Mexico','Central America','Caribbean']],
     ['South America',['Brazil','Andean Region','Southern Cone']],
-    ['Europe',['United Kingdom','France','Germany','Italy','Iberia','Ireland','Greece','Nordic Countries','Benelux','Central Europe','Balkans','Eastern Europe','Russia']],
+    ['Europe',['United Kingdom & Ireland','France','Germany','Italy','Iberia','Greece','Nordic Countries','Benelux','Central Europe','Balkans','Eastern Europe','Russia']],
     ['Asia',['South Asia','China','Japan','The Koreas','Southeast Asia']],
     ['Middle East & North Africa',['Middle East & North Africa']],
     ['Africa',['South Africa','West Africa','East Africa','Southern Africa']],
@@ -1021,7 +1067,7 @@
   ];
   const ERA_DATES={'Ancient World':'c. 3000 BCE–500 CE','Medieval & Renaissance':'500–1650','Age of Revolutions':'1650–1850','Industrial Age':'1760–1914','20th Century':'1900–1999','21st Century':'2000–present'};
   const DRAW_FILTER_STORAGE='theCabinetDrawFiltersV1',DRAW_FILTER_OPTIONS={geographies:GEOGRAPHY_FILTER_GROUPS.flatMap(([,values])=>values),professions:[...PROFESSIONS].sort((a,b)=>a.localeCompare(b)),eras:TIME_ERAS};
-  const loadDrawFilters=()=>{const disabled={geographies:new Set(),professions:new Set(),eras:new Set()};try{const saved=JSON.parse(localStorage.getItem(DRAW_FILTER_STORAGE)||'{}'),legacyRegions=new Set(saved.geographies||[]);if(legacyRegions.has('Spain')||legacyRegions.has('Portugal'))legacyRegions.add('Iberia');saved.geographies=[...legacyRegions];for(const [group,options] of Object.entries(DRAW_FILTER_OPTIONS))for(const value of saved[group]||[])if(options.includes(value))disabled[group].add(value)}catch{}return disabled};
+  const loadDrawFilters=()=>{const disabled={geographies:new Set(),professions:new Set(),eras:new Set()};try{const saved=JSON.parse(localStorage.getItem(DRAW_FILTER_STORAGE)||'{}'),legacyRegions=new Set(saved.geographies||[]);if(legacyRegions.has('Spain')||legacyRegions.has('Portugal'))legacyRegions.add('Iberia');if(legacyRegions.has('United Kingdom')||legacyRegions.has('Ireland'))legacyRegions.add('United Kingdom & Ireland');saved.geographies=[...legacyRegions];for(const [group,options] of Object.entries(DRAW_FILTER_OPTIONS))for(const value of saved[group]||[])if(options.includes(value))disabled[group].add(value)}catch{}return disabled};
   const drawFilters=loadDrawFilters(),drawOptionEnabled=(group,value)=>!drawFilters[group].has(value);
   function saveDrawFilters(){try{localStorage.setItem(DRAW_FILTER_STORAGE,JSON.stringify(Object.fromEntries(Object.entries(drawFilters).map(([group,values])=>[group,[...values]]))))}catch{}}
   function updateDrawSettingsSummary(){const counts=Object.fromEntries(Object.entries(DRAW_FILTER_OPTIONS).map(([group,options])=>[group,options.length-drawFilters[group].size]));$('drawSettingsSummary').textContent=`${counts.geographies}/${GEOGRAPHIES.length} regions · ${counts.professions}/${PROFESSIONS.length} professions · ${counts.eras}/${TIME_ERAS.length} eras`}
@@ -1144,6 +1190,13 @@
   };
   const PERSON_STORY_SIGNATURES={
     'Hank Williams Jr.':'arena-sized country swagger, family tradition, and the impossible confidence of a cabinet cheat code',
+    'Chris Hansen':'investigative patience, controlled confrontation, and a talent for making evasive answers collapse on camera',
+    'Stephen A. Smith':'relentless debate energy, instant name recognition, and a voice capable of turning any briefing into the day’s main event',
+    'Michael Collins':'intelligence networks, guerrilla organization, financial administration, and the political risk of accepting an imperfect treaty',
+    'Éamon de Valera':'republican legitimacy, constitutional endurance, and a political career that repeatedly outlasted the crises around it',
+    'Tom Barry':'flying-column discipline, ambush tactics, and hard-earned command experience in the Irish War of Independence',
+    'Bobby Sands':'the moral force and international symbolism of a hunger strike carried through to death',
+    'Martin McGuinness':'a journey from armed command to negotiation, coalition government, and the difficult machinery of peace',
     'Barack Obama':'a campaigner’s optimism, coalition discipline, and instinct for controlling the public message',
     'Charles de Gaulle':'the conviction that national independence required a strong state and an even stronger executive',
     'Angela Merkel':'a physicist’s patience and a preference for cautious, incremental decisions',

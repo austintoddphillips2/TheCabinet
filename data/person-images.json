@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-08-24T23:12:29.844Z",
-  "rosterSize": 971,
-  "covered": 960,
+  "rosterSize": 976,
+  "covered": 964,
   "images": {
     "14th Dalai Lama": {
       "src": "./assets/people/14th-dalai-lama.jpg",
@@ -1652,6 +1652,16 @@
       "licenseUrl": "",
       "wikidataId": "Q39599",
       "wikipediaTitle": "Christiaan Huygens"
+    },
+    "Chris Hansen": {
+      "src": "./assets/people/chris-hansen.jpg",
+      "alt": "Portrait of Chris Hansen",
+      "source": "https://commons.wikimedia.org/wiki/File:Chris_Hansen.jpg",
+      "creator": "Noa Grayevsky",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "wikidataId": "Q562448",
+      "wikipediaTitle": "Chris Hansen"
     },
     "Christine de Pizan": {
       "src": "./assets/people/christine-de-pizan.jpg",
@@ -5953,6 +5963,16 @@
       "wikidataId": "Q234606",
       "wikipediaTitle": "Martha Stewart"
     },
+    "Martin McGuinness": {
+      "src": "./assets/people/martin-mcguinness.jpg",
+      "alt": "Portrait of Martin McGuinness",
+      "source": "https://commons.wikimedia.org/wiki/File:Martin_McGuinness.jpg",
+      "creator": "Chris Greenberg / The White House",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "wikidataId": "Q57689",
+      "wikipediaTitle": "Martin McGuinness"
+    },
     "Martin Garrix": {
       "src": "./assets/people/martin-garrix.jpg",
       "alt": "Portrait of Martin Garrix",
@@ -8323,6 +8343,16 @@
       "wikidataId": "Q24450982",
       "wikipediaTitle": "Stefanos Tsitsipas"
     },
+    "Stephen A. Smith": {
+      "src": "./assets/people/stephen-a-smith.jpg",
+      "alt": "Portrait of Stephen A. Smith",
+      "source": "https://commons.wikimedia.org/wiki/File:Stephen_A._Smith_February_2020.jpg",
+      "creator": "Senator Chris Coons",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "wikidataId": "Q7608548",
+      "wikipediaTitle": "Stephen A. Smith"
+    },
     "Stephen Hawking": {
       "src": "./assets/people/stephen-hawking.jpg",
       "alt": "Portrait of Stephen Hawking",
@@ -8752,6 +8782,16 @@
       "licenseUrl": "",
       "wikidataId": "Q171977",
       "wikipediaTitle": "Tokugawa Ieyasu"
+    },
+    "Tom Barry": {
+      "src": "./assets/people/tom-barry.jpg",
+      "alt": "Portrait of Tom Barry",
+      "source": "https://commons.wikimedia.org/wiki/File:Tom_Barry_(IRA_guerrilla_leader,_born_1897).jpg",
+      "creator": "Unknown",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "wikidataId": "Q3757020",
+      "wikipediaTitle": "Tom Barry (Irish republican)"
     },
     "Tom Brady": {
       "src": "./assets/people/tom-brady.jpg",
