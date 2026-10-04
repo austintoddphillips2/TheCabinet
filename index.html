@@ -1,19 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) · enabled only on the public GitHub Pages site -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ENKKL3JF1H"></script>
   <script>
-    window.dataLayer=window.dataLayer||[];
-    window.CABINET_ANALYTICS_ENABLED=location.hostname==='austintoddphillips2.github.io';
-    function gtag(){dataLayer.push(arguments)}
-    if(window.CABINET_ANALYTICS_ENABLED){
-      const googleTag=document.createElement('script');
-      googleTag.async=true;
-      googleTag.src='https://www.googletagmanager.com/gtag/js?id=G-ENKKL3JF1H';
-      document.head.append(googleTag);
-      gtag('js',new Date());
-      gtag('config','G-ENKKL3JF1H',{allow_google_signals:false,allow_ad_personalization_signals:false});
-    }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ENKKL3JF1H');
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -1627,7 +1621,7 @@
   const activeRoles=()=>expandedCabinet?ALL_ROLES:ROLES,totalSeats=()=>activeRoles().length,isAdviserRole=role=>ADVISER_ROLES.includes(role),isEgoBlockedRole=role=>role==='Vice President'||isAdviserRole(role),isBlindStatsMode=()=>blindDraft&&['open','time'].includes(mode);
   const modeRecordKey=()=>`${expandedCabinet?'expanded-':''}${blindDraft&&['open','time'].includes(mode)?'blind-':''}${mode}`,modeLabel=()=>MODE_LABELS[modeRecordKey()]||MODE_LABELS[mode];
   let analyticsRun=null;
-  const trackEvent=(name,parameters={})=>{try{if(globalThis.CABINET_ANALYTICS_ENABLED&&typeof globalThis.gtag==='function')globalThis.gtag('event',name,parameters)}catch{}};
+  const trackEvent=(name,parameters={})=>{try{if(typeof globalThis.gtag==='function')globalThis.gtag('event',name,parameters)}catch{}};
   function settleActivePlayTime(){if(!analyticsRun?.active||!analyticsRun.visibleSince)return;analyticsRun.activeMs+=performance.now()-analyticsRun.visibleSince;analyticsRun.visibleSince=0}
   function activePlaySeconds(){settleActivePlayTime();const seconds=Math.max(0,Math.round((analyticsRun?.activeMs||0)/1000));if(analyticsRun?.active&&document.visibilityState==='visible')analyticsRun.visibleSince=performance.now();return seconds}
   function beginAnalyticsRun(){analyticsRun={active:true,activeMs:0,visibleSince:document.visibilityState==='visible'?performance.now():0}}
