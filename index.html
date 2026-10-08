@@ -1,6 +1,31 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script>
+// Preserve challenge links and carry this game's browser history to the new domain.
+// Keep the original localStorage intact; never transfer other applications' data.
+(() => {
+  const destination = new URL('https://satchmoestudios.com/thecabinet/');
+  destination.search = location.search;
+  destination.hash = location.hash;
+  try {
+    const values = {};
+    for (const key of ["theCabinetDrawFiltersV1", "the-cabinet-player-stats-v1", "the-cabinet-daily-result-v1", "the-cabinet-muted-v1", "the-cabinet-known-big-egos-v1"]) {
+      const value = localStorage.getItem(key);
+      if (value !== null) values[key] = value;
+    }
+    if (Object.keys(values).length) {
+      const fragment = new URLSearchParams(destination.hash.slice(1));
+      fragment.set('cabinet-migration', JSON.stringify({ version: 1, values }));
+      destination.hash = fragment.toString();
+    }
+  } catch { /* Redirect normally when storage is unavailable. */ }
+  location.replace(destination.href);
+})();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=https://satchmoestudios.com/thecabinet/"></noscript>
+<link rel="canonical" href="https://satchmoestudios.com/thecabinet/">
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ENKKL3JF1H"></script>
   <script>
